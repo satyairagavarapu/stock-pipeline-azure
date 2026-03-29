@@ -143,7 +143,23 @@ Hierarchical Namespace enables folder-level access control and partition pruning
 
 ## Screenshots
 
-*Architecture diagram and dashboard screenshots coming soon*
+### Azure Resource Group
+![Resource Group](screenshots/01_resource_group.png)
+
+### Bronze Layer — Raw Stock Data in ADLS
+![Bronze Container](screenshots/02_bronze_container.png)
+
+### GitHub Actions — Automated Daily Run
+![GitHub Actions](screenshots/03_github_actions.png)
+
+### Silver Layer — Cleaned Data
+![Silver Layer](screenshots/04_silver_layer.png)
+
+### Gold Layer — TCS Moving Average Chart
+![Gold Chart](screenshots/05_gold_chart.png)
+
+### ADF Pipeline — Orchestration
+![ADF Pipeline](screenshots/06_adf_pipeline.png)
 
 ---
 
