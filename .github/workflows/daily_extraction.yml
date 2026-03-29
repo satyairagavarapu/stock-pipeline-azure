@@ -1,0 +1,29 @@
+name: Daily Stock Extraction
+
+on:
+  schedule:
+    - cron: '30 12 * * *'  # Runs daily at 6PM IST (12:30 UTC)
+  workflow_dispatch:  # Allows manual trigger too
+
+jobs:
+  extract_stocks:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install yfinance azure-storage-blob pandas
+    
+    - name: Run extraction script
+      env:
+        AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+      run: |
+        python scripts/extract_stocks.py
